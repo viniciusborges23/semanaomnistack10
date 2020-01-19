@@ -45,7 +45,6 @@ module.exports = {
 				},
 				techsArray,
 			);
-
 			sendMessage(sendSocketMessageTo, 'new-dev', dev);
 		}
 

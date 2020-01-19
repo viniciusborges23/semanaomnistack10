@@ -52,7 +52,7 @@ function Main({ navigation }) {
 
 		const { latitude, longitude } = currentRegion;
 
-		connect({ latitude, longitude, techs });
+		connect(latitude, longitude, techs);
 	}
 
 	async function loadDevs() {

@@ -5,17 +5,17 @@ const socket = socketio('http://192.168.0.6:3333', {
 });
 
 function subscribeToNewDevs(subscribeFunction) {
-	socket.on('new-dev');
+	socket.on('new-dev', subscribeFunction);
 }
 
-function connect(query) {
-	socket.io.opts.query = query;
+function connect(latitude, longitude, techs) {
+	socket.io.opts.query = {
+		latitude,
+		longitude,
+		techs,
+	};
 
 	socket.connect();
-
-	// socket.on('message', text => {
-	// 	console.log(text);
-	// });
 }
 
 function disconnect() {
